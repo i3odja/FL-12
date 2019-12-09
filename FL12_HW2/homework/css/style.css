@@ -6,27 +6,22 @@
 	section {
 		margin: 50px 0!important;
 	}
-	section::before {
+	section::before,
+    	div.tm-sidebar,
+    	div.tm-team-img,
+    	div#about,
+    	section.blocks div.tm-content-box,
+    	#ideas + section.tm-content-box,
+    	section#ideas ol.carousel-indicators
+    	{
 		display: none;
 	}
-    div.tm-sidebar {
-        display: none;
-    }
     div.tm-main-content {
         padding-top: 0;
     }
     .tm-team-description-container{
         width: 100%;
 		text-align: center;
-    }
-    div.tm-team-img {
-        display: none;
-    }
-    div#about {
-        display: none;
-    }
-    section.blocks div.tm-content-box{
-        display: none;
     }
 	.padding-medium.flex-item.tm-team-description-container {
 		max-width: 100%;
@@ -36,12 +31,6 @@
 		width: 100%;
 		text-align: center;
 	}
-    #ideas + section.tm-content-box{
-        display: none;
-    }
-    section#ideas ol.carousel-indicators {
-        display: none;
-    }
 	section.heading.tm-content-box ol li:nth-child(odd) {
 		text-align: right;
 	}
