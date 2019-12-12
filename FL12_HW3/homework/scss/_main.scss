@@ -1,0 +1,246 @@
+$font-colors: (
+    light: #fff,
+    medium: #c0c3c4,
+    dark: #c0c3c4
+);
+@mixin button-style {
+    color: #fff;
+    background: $button_background;
+    min-width: 120px;
+    padding: 10px 36px;
+    border: none;
+    font-weight: bold;
+    border-radius: 3px;
+    &:hover {
+        background: darken($button_background, 10%);
+        box-shadow: 0 0 5px $button_background;
+    }
+}
+@mixin link-style {
+    color: map-get($font-colors, light);
+    display: block;
+    text-align: center;
+    &:hover {
+        color: $selection-color;
+    }
+}
+@mixin style_words_background ($width, $height, $top, $left) {
+    content: '';
+    display: block;
+    background: $selection-color;
+    width: $width;
+    height: $height;
+    position: relative;
+    z-index: 1;
+    top: $top;
+    left: $left;
+}
+body {
+    background: $contentBackground;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+::selection {
+    background: $selection-color;
+}
+p {
+    &.header_heading {
+        font-size: 72px;
+        font-weight: bold;
+        line-height: 80px;
+        color: $baner_title;
+        margin: 70px 0 60px 0px;
+        max-width: 50%;
+        position: relative;
+        z-index: 1;
+    }
+}
+a {
+    &.login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: map-get($font-colors, light);
+        &:hover {
+            color: $selection-color;
+        }
+    }
+}
+.header_text {
+    margin: 0 0 65px 0;
+    font-size: 18px;
+    white-space: pre-line;
+}
+header {
+    &::before {
+        @include style_words_background(303px, 50px, 270px, 0px);
+    }
+}
+header {
+    background-image: $header-image;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0 10% 10% 10%;
+    border-radius: 0 0 40% 0;
+    .landing-logo {
+        display: flex;
+        color: $baner_title;
+        font-weight: bold;
+        p {
+            font-size: 26px;
+            margin: 0 0 0 10px;
+            span {
+                display: flex;
+                font-size: 10px;
+                justify-content: center; 
+            }
+        }
+    }
+}
+p {
+    &.header_text {
+        + div {
+            display: flex;
+            justify-content: space-between;
+            max-width: 50%;
+            font-size: 26px;
+            a.login {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    }
+}
+.header-wrap {
+    @extend .section_text;
+    width: 1540px;
+    margin: auto;
+}
+.section_text {
+    color: $title-color;
+}
+.section_banner_heading {
+    @extend .section_text;
+}
+main {
+    &::before {
+        @include style_words_background(190px, 50px, 63px, 604px);
+    }
+}
+main {
+    margin: 0 auto;
+    width: 1200px;
+    p {
+        color: map-get($font-colors, light);
+        &.section_text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    a {
+        &.section_link {
+            @include link-style;
+        }
+    }
+    .section_card {
+        background-color: $footer-section-Bakground;
+        display: flex;
+        padding: 10px;
+        border-radius: 5px;
+        width: 1120px;
+        margin: 25px auto;
+        .section_card_img {
+            border-radius: 5px;
+            width: 100%;
+        }
+        .section_card_right_container {
+            padding: 20px 14%;
+            .section_card_heading {
+                text-align: center;
+                font-weight: bold;
+                font-size: 26px;
+            }
+            .section_link {
+                @include link-style;
+            }
+        }
+    }
+    .section_banner {
+        background-image: linear-gradient(to right, #649410, #2d5bd5);
+        position: relative;
+        top: 115px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        padding: 10px 110px;
+        align-items: center;
+        &::before {
+            @include style_words_background(65px, 50px, -28px, 153px);
+        }
+        .section_banner_text_wrap {
+            width: 960px;
+        }
+        .section_banner_heading {
+            font-size: 25px;
+            font-weight: bold;
+            color: $baner_title;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+        .section_banner_text {
+            color: map-get($font-colors, medium); 
+        }
+        .section_banner_button {
+            @include button-style;
+        }
+    }
+}
+.header_button {
+    @include button-style;
+}
+footer {
+    color: map-get($font-colors, light);
+    background-color: $footer-section-Bakground;
+    position: relative;
+    z-index: -1;
+    top: 41px;
+    .footer-wrap {
+        font-size: 21px;
+        color: map-get($font-colors, medium);
+        max-width: 1540px;
+        margin: auto;
+        padding-top: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 60px;
+    }
+}
+footer {
+    .landing-logo {
+        display: flex;
+        font-weight: bold;
+        p {
+            font-size: 26px;
+            color: map-get($font-colors, medium);
+            margin: 0 0 0 10px;
+            span {
+                display: flex;
+                font-size: 10px;
+                justify-content: center; 
+            }
+        }
+    }
+    .footer_text {
+        max-width: 28%;
+    }
+}
