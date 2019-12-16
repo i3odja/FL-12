@@ -4,8 +4,10 @@
 }
 header.header {
     height: 100vh;
+    background-repeat: no-repeat;
     width: 100%;
     background-image: url(../img/home-bg.jpg);
+    background-size: cover;
 }
 .nav-wrap {
     background: #fff;
