@@ -17,7 +17,6 @@ header.header {
 .header-logo {
     font-weight: bold;
     font-size: 25px;
-    color: #779ab0;
 }
 .logo-link {
     width: 100%;
@@ -46,10 +45,10 @@ ul {
 }
 .nav-links, .logo-link {
     text-decoration: none;
-    color: #555555;
+    color: #777777;;
 }
 .nav-links:hover {
-    color: #ffde9c;
+    color: #bfba55;
 }
 .header-wrap {
     height: 100vh;
@@ -71,7 +70,7 @@ ul {
 .header-main-text {
     font-size: 18px;
     margin: 20px 0 55px 0;
-    color: #bfaa29;
+    color: #bfba55;
 }
 .header-main-discover-more {
     text-transform: uppercase;
@@ -150,11 +149,11 @@ li.main-items-status-line-img img {
 .main-items-status-line-date {
     margin: 0 20px;
 }
-
 .main-items-text {
     font-size: 18px;
     margin-top: 30px;
     margin-bottom: 40px;
+    color: #777777;
 }
 .main-items-continue-reading, .header-main-discover-more {
     font-weight: bold;
@@ -193,7 +192,7 @@ footer.footer {
     color: #fff;
 }
 .footer-text {
-    color: #647764;
+    color: #777777;
 }
 .footer-wrap {
     max-width: 945px;
