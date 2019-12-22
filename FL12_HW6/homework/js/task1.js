@@ -15,7 +15,7 @@ if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
         x2 = (-b - Math.sqrt(discriminant)) / (TWO_X_X1_X2 * a);
         x1 = parseInt(x1, 10);
         x2 = parseInt(x2, 10);
-        console.log('x1=', x1, 'x2=', x2);
+        console.log('x1 = %d and x2 = %d', x1, x2);
     } else if (discriminant === 0) {
         x = -b / (TWO_X_X1_X2 * a);
         x = parseInt(x, 10);
