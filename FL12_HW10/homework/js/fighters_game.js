@@ -62,20 +62,20 @@ function Fighter(characteristics) {
 function battle(fighter1, fighter2) {
     f1 = fighter1;
     f2 = fighter2;
-    if (fighter1.getHealth() === 0) {
-        console.log(`${fighter1.getName()} is Dead † and can't fight`)
-    } else if (fighter2.getHealth() === 0){
-        console.log(`${fighter2.getName()} is Dead † and can't fight`)
+    if (f1.getHealth() === 0) {
+        console.log(`${f1.getName()} is Dead † and can't fight`)
+    } else if (f2.getHealth() === 0){
+        console.log(`${f2.getName()} is Dead † and can't fight`)
     } else {
         console.log(`Let's go the battle`);
         //Code of Battle
-        while(fighter1.getHealth() !== 0 && fighter2.getHealth() !== 0) {
-            fighter1.attack(fighter2);
-            fighter2.attack(fighter1);
+        while(f1.getHealth() !== 0 && f2.getHealth() !== 0) {
+            f1.attack(f2);
+            f2.attack(f1);
         }
-        let hpWinner = fighter1.getHealth() | fighter2.getHealth();
-        let winner = hpWinner === fighter1.getHealth() ? fighter1 : fighter2;
-        let looser = hpWinner !== fighter1.getHealth() ? fighter1 : fighter2;
+        let hpWinner = f1.getHealth() | f2.getHealth();
+        let winner = hpWinner === f1.getHealth() ? f1 : f2;
+        let looser = hpWinner !== f1.getHealth() ? f1 : f2;
         //add point to winner's WINS
         winner.addWin();
         //add point to looser's LOOSES
