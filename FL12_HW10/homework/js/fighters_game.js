@@ -1,3 +1,6 @@
+let f1 = '';
+let f2 = '';
+
 function Fighter(characteristics) {
     let number100 = 100;
     let maxHp = characteristics.hp;
@@ -36,12 +39,12 @@ function Fighter(characteristics) {
             return ++loss;
         },
         attack(defender) {
-            let fighter1IsDefender = defender === myFighter;
+            let fighter1IsDefender = defender === f1;
             if (fighter1IsDefender) {
-                kindOfAttack(myFighter, myFighter2);
+                kindOfAttack(f1, f2);
             } else {
-                kindOfAttack(myFighter2, myFighter)
-            }
+                kindOfAttack(f2, f1);
+            } 
             function kindOfAttack(defender, attacker) {
                 let dstTarget = Math.floor(Math.random() * number100) + 1;
                 let successedAttack = number100 - (defender.getStrength() + defender.getAgility());
@@ -57,6 +60,8 @@ function Fighter(characteristics) {
 }
 
 function battle(fighter1, fighter2) {
+    f1 = fighter1;
+    f2 = fighter2;
     if (fighter1.getHealth() === 0) {
         console.log(`${fighter1.getName()} is Dead † and can't fight`)
     } else if (fighter2.getHealth() === 0){
@@ -76,7 +81,7 @@ function battle(fighter1, fighter2) {
         //add point to looser's LOOSES
         looser.addLoss();
         //logging in console Winner's name & Game over
-        console.log(`Winner is ${winner.getName()}`);
+        console.log(`${winner.getName()} has won!`);
         console.log(`Game over`);
     }
 }
